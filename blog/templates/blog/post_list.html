@@ -7,11 +7,12 @@
             <h1><a href="">Блог Django Girls<a></h1>
         </div>
         
-        <div>
-            <p>Опубликовано тогда-то</p>
-            <h2><a href="">Первый пост</a></h2>
-        </div>
-        <p>Hi there!</p>
-        <p>It works!</p>
+        {% for post in posts %}
+            <div>
+                <p>Опубликовано: {{ post.published_date }}</p>
+                <h1><a href='Ссылочка'>{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
